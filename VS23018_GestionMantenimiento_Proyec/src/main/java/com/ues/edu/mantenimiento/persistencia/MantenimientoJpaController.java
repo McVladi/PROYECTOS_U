@@ -83,7 +83,7 @@ public List<Mantenimiento> findMantenimientoEntities() {
     EntityManager em = dao.getEntityManager();
     try {
         TypedQuery<Mantenimiento> q = em.createQuery(
-            "SELECT m FROM Mantenimiento m", Mantenimiento.class); // Corregido "Mantenimiento" con mayúscula
+            "SELECT m FROM Mantenimiento m", Mantenimiento.class); // Consulta todos los mantenimientos
         return q.getResultList();
     } finally {
         em.close();
