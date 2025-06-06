@@ -1,0 +1,82 @@
+/* sidebar.css */
+
+/* Hacemos que body y html ocupen el 100% de la altura */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor fijo (sidebar) en la izquierda */
+#sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;             /* ancho fijo del menú lateral */
+  height: 100%;
+  background-color: #343a40;
+  overflow-y: auto;         /* si el contenido es más alto, agrega scroll */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  z-index: 1000;            /* para que siempre esté por encima del contenido */
+}
+
+/* Título / encabezado del sidebar */
+.sidebar-heading {
+  background-color: #1170E1; /* Azul para encabezado */
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: 2px solid #0D47A1;
+}
+
+/* Línea divisoria horizontal */
+.sidebar-divider {
+  height: 1px;
+  background-color: #0D47A1;
+  margin: 0.5rem 0;
+}
+
+/* Estilos para cada elemento de menú */
+.list-group-item {
+  background-color: #343a40;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+/* Icono junto al texto */
+.list-group-item i {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* Hover sobre cada item */
+.list-group-item:hover {
+  background-color: #1170E1;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Item “activo” (puedes añadir la clase active a la <a> que corresponda) */
+.list-group-item.active {
+  background-color: #0D47A1 !important;
+  color: #ffffff !important;
+}
+
+/* Evitar subrayado de los enlaces */
+.list-group-item:link,
+.list-group-item:visited {
+  text-decoration: none;
+}
+
+/* ***************** */
+/* Espacio que deja el sidebar para el contenido principal */
+#page-content-wrapper {
+  margin-left: 240px; /* debe coincidir con el ancho de #sidebar-wrapper */
+  padding: 1rem;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.0">
+    <persistence-unit name="mantenimientoPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.ues.edu.mantenimiento.logica.Laboratorio</class>
+        <class>com.ues.edu.mantenimiento.logica.Equipo</class>
+        <class>com.ues.edu.mantenimiento.logica.FichaTecnica</class>
+        <class>com.ues.edu.mantenimiento.logica.Tecnico</class>
+        <class>com.ues.edu.mantenimiento.logica.Mantenimiento</class>
+        <class>com.ues.edu.mantenimiento.logica.Usuario</class>
+    
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/mantenimiento"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="123"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+        </properties>
+    </persistence-unit>
+</persistence>
